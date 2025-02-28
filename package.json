@@ -11,8 +11,10 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
+    "@types/express-validator": "^2.20.33",
     "express": "^4.17.1",
-    "mongoose": "^5.12.3",
+    "express-validator": "^7.2.1",
+    "mongoose": "^8.11.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.1.6"
   },

@@ -1,5 +1,5 @@
-import { response, Router } from 'express';
-import { Request, Response } from 'express';
+import { Request, Response, Router } from 'express';
+import { userValidationRules, userValidator } from './user.validation';
 
 const router = Router();
 
@@ -59,7 +59,7 @@ router.get("/Hola", diguesHola);
  *       500:
  *         description: Failed to create user
  */
-router.post("/register", createUser);
+router.post("/register",userValidationRules(),userValidator, createUser);
 
 /**
  * @swagger
@@ -149,7 +149,7 @@ router.get('/:name', getUserByName);
  *       500:
  *         description: Failed to update user
  */
-router.put('/:name', updateUserByName);
+router.put('/:name', userValidationRules(),userValidator, updateUserByName);
 
 /**
  * @swagger

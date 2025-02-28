@@ -21,14 +21,18 @@ export class UserService {
   }
 
   async loginUser(name:string, password:string): Promise<boolean | null>{
-    const user = await User.findOne({name, password});
-    if(user === null){
+    const user2: Partial<IUsuari> | null = await User.findOne({name: name}).select('name password');
+    console.log("user2 is: " +user2);
+    if(user2 === null){
+        console.log("User not found")
         return null;
     }
-    else if(user.password === password){
+    else if(user2.password === password){
+        console.log("Correct user and password")
         return true;
     }
     else{
+        console.log("The password was incorrect")
         return false;
     }
   }

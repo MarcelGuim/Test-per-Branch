@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 class ConnectDB {
   private static connection: mongoose.Connection | null = null;
 
-  // Connect to the MongoDB database
   public static async connect(): Promise<void> {
     if (this.connection && this.connection.readyState === 1) {
       console.log('🟢 Already connected to MongoDB');
@@ -11,13 +10,10 @@ class ConnectDB {
     }
 
     try {
-      const dbURI = 'mongodb://localhost:27017/usuaris'; // Canvia segons la teva configuració
-      mongoose.set('strictQuery', false); // O true, segons necessitis
+      const dbURI = 'mongodb://localhost:27017/momentum';
+      mongoose.set('strictQuery', false); 
       
-      // Connectar a MongoDB amb opcions recomanades
       await mongoose.connect(dbURI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
       } as mongoose.ConnectOptions);
 
       this.connection = mongoose.connection;
@@ -36,11 +32,11 @@ class ConnectDB {
     }
   }
 
-  // Disconnect from MongoDB
+
   public static async disconnect(): Promise<void> {
     if (this.connection) {
       await mongoose.disconnect();
-      this.connection = null; // Important per evitar errors futurs
+      this.connection = null;
       console.log('🔴 MongoDB disconnected successfully');
     }
   }
