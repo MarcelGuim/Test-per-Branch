@@ -13,3 +13,5 @@ Pre-Branch
 Post first branch
 
 Second modification to the first_branch branch
+
+segon commit fet a main per intentar veure una divergencia de les branques
