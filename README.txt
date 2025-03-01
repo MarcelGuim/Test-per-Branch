@@ -14,4 +14,10 @@ Post first branch
 
 Second modification to the first_branch branch
 
+
 segon commit fet a main per intentar veure una divergencia de les branques
+
+Commit fet a first_branch
+
+Segon commit fet a first_branch per intentar bifurcar les branques
+
