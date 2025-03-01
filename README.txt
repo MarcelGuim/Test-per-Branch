@@ -21,3 +21,5 @@ Commit fet a first_branch
 
 Segon commit fet a first_branch per intentar bifurcar les branques
 
+Post merge
+
